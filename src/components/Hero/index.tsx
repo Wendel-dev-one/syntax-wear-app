@@ -1,4 +1,5 @@
 import Banner from "@/assets/images/banner.jpg";
+import { Button } from "../Button";
 
 export const Hero = () => {
   return (
@@ -11,9 +12,7 @@ export const Hero = () => {
         />
 
         <div className="absolute w-full bottom-0 flex justify-end items-center text-center px-6 md:px-30 pb-38">
-
-          <div className="flex flex-col items-center w-[388px] text-white">
-
+          <div className="flex flex-col items-center w-97 text-white">
             <h2 className="text-lg font-medium leading-normal tracking-widest mb-2.5">
               Krypton One
             </h2>
@@ -22,10 +21,13 @@ export const Hero = () => {
             </h1>
 
             <div className="flex gap-3.5">
-              <button>Ver modelos</button>
-              <button>Comprar</button>
+              <Button variant="secondary" size="sm">
+                Ver modelos
+              </Button>
+              <Button variant="primary">
+                Comprar
+              </Button>
             </div>
-
           </div>
         </div>
       </section>

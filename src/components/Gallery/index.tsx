@@ -5,6 +5,7 @@ import galeriaTenisCinza from "@/assets/images/galeria-tenis-cinza.jpg";
 import galeriaTenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisRoxo from "@/assets/images/galeria-tenis-roxo.jpg";
 import { Button } from "../Button";
+import { Overlay } from "../Overlay";
 
 export const Gallery = () => {
   return (
@@ -15,18 +16,18 @@ export const Gallery = () => {
           alt="Modelo masculino usando tênis SyntaxWear"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 rounded-[20px] bg-black/10 px-4 text-center text-white">
-          <h2 className="text-sm font-medium tracking-widest">Krypton One</h2>
-          <p className="text-base tracking-widest">Estilo urbano com atitude</p>
-          <div className="flex gap-2.5">
-            <Button variant="secondary" size="sm">
-              Feminino
-            </Button>
-            <Button variant="secondary" size="sm">
-              Masculino
-            </Button>
-          </div>
-        </div>
+        <Overlay
+          title="Kripton One"
+          subtitle="Estilo urbano com atitude"
+          className="inset-0 justify-center"
+        >
+          <Button variant="secondary" size="sm">
+            Feminino
+          </Button>
+          <Button variant="secondary" size="sm">
+            Masculino
+          </Button>
+        </Overlay>
       </div>
       <img
         src={galeriaTenisBrancoEPreto}

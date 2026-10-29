@@ -49,7 +49,8 @@
 }
 
 body {
-    font-family: var(--font-display); 
+    font-family: var(--font-display);
+    background-color: var(--color-surface); 
 }
 /* Esconde o scrollbar no Chrome, Safari e Edge */
 .scrollbar-hide::-webkit-scrollbar {

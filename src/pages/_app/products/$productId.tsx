@@ -2,17 +2,24 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { products } from "../../../mocks/products";
 import { formatCurrency } from "../../../utils/formatCurrency";
 import { MdAddShoppingCart } from "react-icons/md";
+import { useContext } from "react";
+import { CartContext } from "../../../contexts/CartContext";
 
 export const Route = createFileRoute("/_app/products/$productId")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
+
+  const { add } = useContext(CartContext);
+
   const { productId } = Route.useParams();
 
   const filteredProduct = products.find(
     (product) => product.id === Number(productId),
   );
+
+  if(!filteredProduct) return;
 
   const originalPrice = filteredProduct?.price ?? 0;
 
@@ -78,7 +85,7 @@ function RouteComponent() {
             </form>
           </div>
 
-          <button className="flex items-center justify-center gap-1 bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800">
+          <button className="flex items-center justify-center gap-1 bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800" onClick={() => add(filteredProduct)}>
             Adicionar ao carrinho <MdAddShoppingCart className="w-5 h-5" />
           </button>
 

@@ -8,13 +8,22 @@ export const ShoppingCart = () => {
   const [cartIsOpen, setCartIsOpen] = useState<boolean>(false);
   const { cart, remove, increment, decrement } = useContext(CartContext);
 
+  const cartItemCount = cart.length;
+
   return (
     <>
       <button
-        className="cursor-pointer"
+        className="relative cursor-pointer"
         onClick={() => setCartIsOpen(!cartIsOpen)}
+        aria-label={`Carrinho de compras${cartItemCount > 0 ? `, ${cartItemCount} ${cartItemCount === 1 ? "item" : "itens"}` : ", vazio"}`}
       >
         <img src={IconCart} alt="Ícone carrinho de compras" />
+
+        {cartItemCount > 0 && (
+          <span className="absolute -top-2 -right-2 min-w-4.5 h-4.5 px-1 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none pointer-events-none">
+            {cartItemCount}
+          </span>
+        )}
       </button>
 
       {/* Overlay */}

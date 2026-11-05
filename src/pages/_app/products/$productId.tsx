@@ -4,6 +4,7 @@ import { formatCurrency } from "../../../utils/formatCurrency";
 import { MdAddShoppingCart } from "react-icons/md";
 import { useContext } from "react";
 import { CartContext } from "../../../contexts/CartContext";
+import { CEPForm } from "../../../components/CEPForm";
 
 export const Route = createFileRoute("/_app/products/$productId")({
   component: RouteComponent,
@@ -73,16 +74,7 @@ function RouteComponent() {
           <div className="mb-5">
             <p>Calcular prazo de entrega</p>
 
-            <form className="flex justify-between gap-3">
-              <input
-                type="text"
-                placeholder="Insira seu CEP"
-                className="border border-[#c0c0c0] rounded-md p-3 w-full"
-              />
-              <button className="bg-black text-white py-3 px-6 rounded-md w-1/2 cursor-pointer hover:bg-gray-800">
-                Calcular
-              </button>
-            </form>
+            <CEPForm />
           </div>
 
           <button className="flex items-center justify-center gap-1 bg-black text-white rounded-md p-5 w-full cursor-pointer hover:bg-gray-800" onClick={() => add(filteredProduct)}>

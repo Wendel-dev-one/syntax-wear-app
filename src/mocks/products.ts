@@ -69,7 +69,7 @@ export const products = [
     color: "Medium Grey",
     description:
       "Tênis resistente à água, feito em lã merino com ajuste confortável e respirável. Perfeito para quem busca proteção e estilo em qualquer clima.",
-    category: { id: 3, name: "Outlet" },
+    category: { id: 1, name: "Masculino" },
   },
   {
     id: 7,

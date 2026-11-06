@@ -6,8 +6,11 @@ import galeriaTenisColorido from "@/assets/images/galeria-tenis-colorido.jpg";
 import galeriaTenisRoxo from "@/assets/images/galeria-tenis-roxo.jpg";
 import { Button } from "../Button";
 import { Overlay } from "../Overlay";
+import { useRouter } from "@tanstack/react-router";
 
 export const Gallery = () => {
+  const router = useRouter();
+
   return (
     <section className="container grid grid-cols-2 grid-rows-[repeat(5,auto)] gap-2.5 py-5 [grid-template-areas:'highlight_highlight'_'sneaker-white_sneaker-white'_'model_sneaker-color'_'model_sneaker-silver'_'sneaker-purple_sneaker-purple'] md:grid-cols-[repeat(4,1fr)] md:grid-rows-[repeat(3,250px)] md:gap-7.5 md:[grid-template-areas:'highlight_highlight_sneaker-purple_sneaker-purple'_'highlight_highlight_model_sneaker-color'_'sneaker-white_sneaker-white_model_sneaker-silver']">
       <div className="[grid-area:highlight] relative h-123.5 overflow-hidden rounded-[20px] md:h-full">
@@ -21,10 +24,28 @@ export const Gallery = () => {
           subtitle="Estilo urbano com atitude"
           className="inset-0 justify-center"
         >
-          <Button variant="secondary" size="sm">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() =>
+              router.navigate({
+                to: "/products/category/$category",
+                params: { category: "feminino" },
+              })
+            }
+          >
             Feminino
           </Button>
-          <Button variant="secondary" size="sm">
+          <Button
+            variant="secondary"
+            size="sm"
+            onClick={() =>
+              router.navigate({
+                to: "/products/category/$category",
+                params: { category: "masculino" },
+              })
+            }
+          >
             Masculino
           </Button>
         </Overlay>

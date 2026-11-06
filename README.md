@@ -1,75 +1,75 @@
-# React + TypeScript + Vite
+# SyntaxWear
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Loja virtual demonstrativa de calçados, desenvolvida com React e TypeScript. A interface reúne catálogo de produtos, páginas informativas, formulários de acesso e cadastro e um carrinho de compras que mantém os itens no navegador.
 
-Currently, two official plugins are available:
+## Desenvolvido por
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Wendel Silva
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Página inicial com banner, categorias e galeria.
+- Catálogo, filtros por categoria e detalhes dos produtos.
+- Carrinho com adição, remoção e ajuste de quantidades; os dados ficam salvos no `localStorage`.
+- Consulta de endereço por CEP na página do produto, usando a API pública ViaCEP.
+- Páginas de perguntas frequentes, apresentação da marca e lojas.
+- Telas de login e cadastro com validação de formulário.
 
-## Expanding the ESLint configuration
+> **Observação:** este projeto é uma demonstração de front-end. O catálogo usa dados locais em `src/mocks`, e não há integração com serviço de autenticação, pagamento ou pedidos. Os botões de login/cadastro não criam uma sessão ou conta real.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19 e TypeScript
+- Vite 8
+- TanStack Router
+- Tailwind CSS 4
+- React Hook Form e Zod
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Requisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js compatível com Vite 8 (Node.js 20.19+ ou 22.12+).
+- npm.
 
+## Como executar
+
+No terminal, a partir da pasta do projeto:
+
+```bash
+npm ci
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+O Vite exibirá no terminal o endereço local da aplicação, normalmente `http://localhost:5173`. Abra esse endereço no navegador.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Comandos disponíveis
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento. |
+| `npm run build` | Executa a verificação de tipos e gera a versão de produção em `dist/`. |
+| `npm run preview` | Serve localmente a versão já compilada em `dist/`. Execute `npm run build` antes. |
+| `npm run lint` | Verifica o código com ESLint. |
 
-```
+## Páginas principais
+
+| Caminho | Conteúdo |
+| --- | --- |
+| `/` | Página inicial |
+| `/products` | Catálogo de produtos |
+| `/products/:productId` | Detalhes de um produto |
+| `/products/category/:category` | Produtos de uma categoria |
+| `/about` | Sobre a marca |
+| `/our-stores` | Lojas |
+| `/faq` | Perguntas frequentes |
+| `/sign-in` | Login |
+| `/sign-up` | Cadastro |
+
+## Organização do projeto
+
+- `src/pages/` — páginas e rotas, organizadas por arquivo com TanStack Router.
+- `src/components/` — componentes reutilizáveis da interface.
+- `src/contexts/` — estado compartilhado do carrinho.
+- `src/mocks/` — dados locais de produtos e categorias.
+- `src/assets/` — imagens e fontes usadas pela aplicação.
+- `src/styles/` — estilos globais e configuração visual.
+- `src/utils/` — funções utilitárias, como formatação de moeda e validação de CPF.

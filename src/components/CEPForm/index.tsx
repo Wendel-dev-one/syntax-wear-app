@@ -57,34 +57,34 @@ export const CEPForm = () => {
           {...register("cep")}
           type="text"
           placeholder="Insira seu CEP"
-          className="border border-[#c0c0c0] rounded-md p-3 w-full"
+          className="border border-border-alt rounded-md p-3 w-full"
         />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-black text-white py-3 px-6 rounded-md w-1/2 cursor-pointer hover:bg-gray-800 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="bg-black text-white py-3 px-6 rounded-md w-1/2 cursor-pointer hover:bg-black-hover disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Calculando..." : "Calcular"}
         </button>
       </div>
       {errors.cep && (
-        <span className="text-red-500 text-sm">{errors.cep.message}</span>
+        <span className="text-error text-sm">{errors.cep.message}</span>
       )}
 
       {address && (
-        <div className="mt-4 bg-green-50 p-2.5 rounded-md">
+        <div className="mt-4 bg-success-bg p-2.5 rounded-md">
           <h3 className="text-lg font-bold">Endereço Encontrado</h3>
-          <p className="text-gray-600">
+          <p className="text-text-secondary">
             {address.logradouro}, {address.complemento}
           </p>
-          <p className="text-gray-600">
+          <p className="text-text-secondary">
             {address.bairro} - {address.localidade}/{address.uf}
           </p>
-          <p className="text-gray-600">
+          <p className="text-text-secondary">
             Região: <span className="font-semibold">{address.regiao}</span>
           </p>
           {address.shippingCost !== undefined && (
-            <p className="text-green-500 font-bold">
+            <p className="text-success font-bold">
               Custo do Frete: {formatCurrency(address.shippingCost)}
             </p>
           )}
@@ -92,9 +92,9 @@ export const CEPForm = () => {
       )}
 
       {addressError && (
-        <div className="mt-4 bg-red-100 p-2 rounded-md">
+        <div className="mt-4 bg-error-bg p-2 rounded-md">
           <h3 className="text- font-bold">Erro ao buscar endereço.</h3>
-          <p className="text-red-500 text-sm">{addressError}</p>
+          <p className="text-error text-sm">{addressError}</p>
         </div>
       )}
     </form>

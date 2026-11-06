@@ -24,7 +24,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         />
       </Link>
 
-      <div className="text-black rounded-2xl p-4">
+      <div className="text-text rounded-2xl p-4">
         <h3 className="text-lg font-semibold">{product.name}</h3>
 
         <p>{product.color}</p>

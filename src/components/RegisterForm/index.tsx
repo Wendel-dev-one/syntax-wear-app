@@ -11,15 +11,15 @@ export const RegisterForm = () => {
   const inputClass = (hasError: boolean) =>
     `w-full border rounded-xs px-1 mt-1 focus:outline-none focus:ring-2 ${
       hasError
-        ? "border-red-500 focus:ring-red-400"
-        : "border-gray-300 focus:ring-[#5433eb]"
+        ? "border-error focus:ring-error"
+        : "border-border focus:ring-accent"
     }`;
 
   return (
-    <form className="text-black" noValidate>
+    <form className="text-text" noValidate>
       {/* Primeiro nome */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="firstName">
+        <label className="text-xs text-text-secondary" htmlFor="firstName">
           Nome
         </label>
         <input
@@ -28,7 +28,7 @@ export const RegisterForm = () => {
           {...register("firstName")}
         />
         {errors.firstName && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.firstName.message}
           </span>
         )}
@@ -36,7 +36,7 @@ export const RegisterForm = () => {
 
       {/* Último nome */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="lastName">
+        <label className="text-xs text-text-secondary" htmlFor="lastName">
           Sobrenome
         </label>
         <input
@@ -45,7 +45,7 @@ export const RegisterForm = () => {
           {...register("lastName")}
         />
         {errors.lastName && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.lastName.message}
           </span>
         )}
@@ -53,7 +53,7 @@ export const RegisterForm = () => {
 
       {/* E-mail */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="email">
+        <label className="text-xs text-text-secondary" htmlFor="email">
           E-mail
         </label>
         <input
@@ -63,7 +63,7 @@ export const RegisterForm = () => {
           {...register("email")}
         />
         {errors.email && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.email.message}
           </span>
         )}
@@ -71,7 +71,7 @@ export const RegisterForm = () => {
 
       {/* CPF */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="cpf">
+        <label className="text-xs text-text-secondary" htmlFor="cpf">
           CPF
         </label>
         <input
@@ -81,7 +81,7 @@ export const RegisterForm = () => {
           {...register("cpf")}
         />
         {errors.cpf && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.cpf.message}
           </span>
         )}
@@ -89,7 +89,7 @@ export const RegisterForm = () => {
 
       {/* Data de nascimento */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="birthDate">
+        <label className="text-xs text-text-secondary" htmlFor="birthDate">
           Data de nascimento
         </label>
         <input
@@ -99,7 +99,7 @@ export const RegisterForm = () => {
           {...register("birthDate")}
         />
         {errors.birthDate && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.birthDate.message}
           </span>
         )}
@@ -107,7 +107,7 @@ export const RegisterForm = () => {
 
       {/* Telefone */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="cellphone">
+        <label className="text-xs text-text-secondary" htmlFor="cellphone">
           Telefone
         </label>
         <input
@@ -117,7 +117,7 @@ export const RegisterForm = () => {
           {...register("phone")}
         />
         {errors.phone && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.phone.message}
           </span>
         )}
@@ -125,7 +125,7 @@ export const RegisterForm = () => {
 
       {/* Senha */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="password">
+        <label className="text-xs text-text-secondary" htmlFor="password">
           Senha
         </label>
         <input
@@ -135,7 +135,7 @@ export const RegisterForm = () => {
           {...register("password")}
         />
         {errors.password && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.password.message}
           </span>
         )}
@@ -143,7 +143,7 @@ export const RegisterForm = () => {
 
       {/* Confirmação de senha */}
       <div>
-        <label className="text-xs text-gray-600" htmlFor="confirmPassword">
+        <label className="text-xs text-text-secondary" htmlFor="confirmPassword">
           Confirmar senha
         </label>
         <input
@@ -153,7 +153,7 @@ export const RegisterForm = () => {
           {...register("confirmPassword")}
         />
         {errors.confirmPassword && (
-          <span className="text-xs text-red-600 mt-1">
+          <span className="text-xs text-error mt-1">
             {errors.confirmPassword.message}
           </span>
         )}
@@ -163,7 +163,7 @@ export const RegisterForm = () => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="bg-[#5433EB] text-white font-semibold uppercase rounded-md py-3 transition-all hover:bg-[#4028c7] disabled:opacity-50 w-full mt-3 cursor-pointer"
+        className="bg-accent text-white font-semibold uppercase rounded-md py-3 transition-all hover:bg-accent-hover disabled:opacity-50 w-full mt-3 cursor-pointer"
       >
         {isSubmitting ? "Criando conta..." : "Criar conta"}
       </button>

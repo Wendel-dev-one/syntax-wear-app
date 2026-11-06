@@ -22,6 +22,12 @@
   --color-error: hsl(0, 83%, 58%);
   --color-footer-bg: hsl(0, 0%, 20%);
   --color-footer-hover: hsl(0, 0%, 80%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-black-hover: hsl(0, 0%, 20%);
+  --color-success: hsl(142, 72%, 29%);
+  --color-success-bg: hsl(138, 76%, 97%);
+  --color-error-bg: hsl(0, 100%, 95%);
 
   --font-display: "Ubuntu Regular", sans-serif;
 }

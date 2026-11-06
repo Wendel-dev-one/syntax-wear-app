@@ -20,7 +20,7 @@ export const ShoppingCart = () => {
         <img src={IconCart} alt="Ícone carrinho de compras" />
 
         {cartItemCount > 0 && (
-          <span className="absolute -top-2 -right-2 min-w-4.5 h-4.5 px-1 bg-red-500 text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none pointer-events-none">
+          <span className="absolute -top-2 -right-2 min-w-4.5 h-4.5 px-1 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center leading-none pointer-events-none">
             {cartItemCount}
           </span>
         )}
@@ -99,7 +99,7 @@ export const ShoppingCart = () => {
           </ul>
 
           <footer className="absolute bottom-0 w-full h-25 p-4">
-            <button className="w-full h-full bg-black text-white rounded-xs cursor-pointer hover:bg-gray-800">
+            <button className="w-full h-full bg-black text-white rounded-xs cursor-pointer hover:bg-black-hover">
               Fechar pedido
             </button>
           </footer>

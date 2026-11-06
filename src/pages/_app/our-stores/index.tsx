@@ -22,13 +22,13 @@ function RouteComponent() {
       />
 
       <div>
-        <h1 className="text-black text-2xl max-w-7xl m-auto my-20 text-center">
+        <h1 className="text-text text-2xl max-w-7xl m-auto my-20 text-center">
           Nossas lojas são o coração da nossa marca. Explore a coleção mais
           recente, experimente seus modelos favoritos e sinta o conforto da
           SyntaxWear pessoalmente
         </h1>
 
-        <section className="text-black w-full space-y-20">
+        <section className="text-text w-full space-y-20">
           <div className="flex flex-col md:flex-row items-center gap-2.5">
             <div className="text-center py-6 px-2.5">
               <h2 className="text-3xl mb-5">Novidades ao vivo</h2>

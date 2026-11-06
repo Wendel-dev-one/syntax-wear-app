@@ -1,6 +1,6 @@
 import Logo from "@/assets/images/logo.png";
 import IconUser from "@/assets/images/icon-user.png";
-import IconAbout from "@/assets/images/icon-about.png";
+import IconFaq from "@/assets/images/icon-faq.png";
 import { Link } from "@tanstack/react-router";
 import { ShoppingCart } from "../ShoppingCart";
 import { MenuMobile } from "../MenuMobile";
@@ -20,7 +20,7 @@ export const Header = () => {
   return (
     <div className="relative">
       <header className="fixed top-10 left-0 right-0 z-10 mx-10">
-        <div className="bg-white max-w-342.5 mx-auto flex justify-between items-center py-3 px-7 rounded-2xl mt-5">
+        <div className="bg-background max-w-342.5 mx-auto flex justify-between items-center py-3 px-7 rounded-2xl mt-5">
           <Link to="/">
             <img src={Logo} alt="Logo SyntaxWear" className="w-32 md:w-38" />
           </Link>
@@ -53,7 +53,7 @@ export const Header = () => {
               </li>
               <li className="hidden lg:block">
                 <Link to="/about">
-                  <img src={IconAbout} alt="Ícone de Sobre" />
+                  <img src={IconFaq} alt="Ícone de Sobre" />
                 </Link>
               </li>
               <li>

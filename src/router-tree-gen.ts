@@ -14,6 +14,7 @@ import { Route as AppIndexRouteImport } from './pages/_app/index'
 import { Route as AuthSignInRouteImport } from './pages/_auth/sign-in'
 import { Route as AuthSignUpRouteImport } from './pages/_auth/sign-up'
 import { Route as AppAboutIndexRouteImport } from './pages/_app/about/index'
+import { Route as AppFaqIndexRouteImport } from './pages/_app/faq/index'
 import { Route as AppOurStoresIndexRouteImport } from './pages/_app/our-stores/index'
 import { Route as AppProductsIndexRouteImport } from './pages/_app/products/index'
 import { Route as AppProductsProductIdRouteImport } from './pages/_app/products/$productId'
@@ -41,6 +42,11 @@ const AuthSignUpRoute = AuthSignUpRouteImport.update({
 const AppAboutIndexRoute = AppAboutIndexRouteImport.update({
   id: '/about/',
   path: '/about/',
+  getParentRoute: () => AppLayoutRoute,
+} as any)
+const AppFaqIndexRoute = AppFaqIndexRouteImport.update({
+  id: '/faq/',
+  path: '/faq/',
   getParentRoute: () => AppLayoutRoute,
 } as any)
 const AppOurStoresIndexRoute = AppOurStoresIndexRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/sign-up': typeof AuthSignUpRoute
   '/products/$productId': typeof AppProductsProductIdRoute
   '/about/': typeof AppAboutIndexRoute
+  '/faq/': typeof AppFaqIndexRoute
   '/our-stores/': typeof AppOurStoresIndexRoute
   '/products/': typeof AppProductsIndexRoute
   '/products/category/$category': typeof AppProductsCategoryCategoryRoute
@@ -81,6 +88,7 @@ export interface FileRoutesByTo {
   '/': typeof AppIndexRoute
   '/products/$productId': typeof AppProductsProductIdRoute
   '/about': typeof AppAboutIndexRoute
+  '/faq': typeof AppFaqIndexRoute
   '/our-stores': typeof AppOurStoresIndexRoute
   '/products': typeof AppProductsIndexRoute
   '/products/category/$category': typeof AppProductsCategoryCategoryRoute
@@ -93,6 +101,7 @@ export interface FileRoutesById {
   '/_app/': typeof AppIndexRoute
   '/_app/products/$productId': typeof AppProductsProductIdRoute
   '/_app/about/': typeof AppAboutIndexRoute
+  '/_app/faq/': typeof AppFaqIndexRoute
   '/_app/our-stores/': typeof AppOurStoresIndexRoute
   '/_app/products/': typeof AppProductsIndexRoute
   '/_app/products/category/$category': typeof AppProductsCategoryCategoryRoute
@@ -105,6 +114,7 @@ export interface FileRouteTypes {
     | '/sign-up'
     | '/products/$productId'
     | '/about/'
+    | '/faq/'
     | '/our-stores/'
     | '/products/'
     | '/products/category/$category'
@@ -115,6 +125,7 @@ export interface FileRouteTypes {
     | '/'
     | '/products/$productId'
     | '/about'
+    | '/faq'
     | '/our-stores'
     | '/products'
     | '/products/category/$category'
@@ -126,6 +137,7 @@ export interface FileRouteTypes {
     | '/_app/'
     | '/_app/products/$productId'
     | '/_app/about/'
+    | '/_app/faq/'
     | '/_app/our-stores/'
     | '/_app/products/'
     | '/_app/products/category/$category'
@@ -174,6 +186,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppAboutIndexRouteImport
       parentRoute: typeof AppLayoutRoute
     }
+    '/_app/faq/': {
+      id: '/_app/faq/'
+      path: '/faq'
+      fullPath: '/faq/'
+      preLoaderRoute: typeof AppFaqIndexRouteImport
+      parentRoute: typeof AppLayoutRoute
+    }
     '/_app/our-stores/': {
       id: '/_app/our-stores/'
       path: '/our-stores'
@@ -209,6 +228,7 @@ interface AppLayoutRouteChildren {
   AppIndexRoute: typeof AppIndexRoute
   AppProductsProductIdRoute: typeof AppProductsProductIdRoute
   AppAboutIndexRoute: typeof AppAboutIndexRoute
+  AppFaqIndexRoute: typeof AppFaqIndexRoute
   AppOurStoresIndexRoute: typeof AppOurStoresIndexRoute
   AppProductsIndexRoute: typeof AppProductsIndexRoute
   AppProductsCategoryCategoryRoute: typeof AppProductsCategoryCategoryRoute
@@ -218,6 +238,7 @@ const AppLayoutRouteChildren: AppLayoutRouteChildren = {
   AppIndexRoute: AppIndexRoute,
   AppProductsProductIdRoute: AppProductsProductIdRoute,
   AppAboutIndexRoute: AppAboutIndexRoute,
+  AppFaqIndexRoute: AppFaqIndexRoute,
   AppOurStoresIndexRoute: AppOurStoresIndexRoute,
   AppProductsIndexRoute: AppProductsIndexRoute,
   AppProductsCategoryCategoryRoute: AppProductsCategoryCategoryRoute,

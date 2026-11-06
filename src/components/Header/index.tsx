@@ -52,7 +52,7 @@ export const Header = () => {
                 </Link>
               </li>
               <li className="hidden lg:block">
-                <Link to="/about">
+                <Link to="/faq">
                   <img src={IconFaq} alt="Ícone de Sobre" />
                 </Link>
               </li>

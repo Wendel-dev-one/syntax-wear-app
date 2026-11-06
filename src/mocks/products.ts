@@ -8,7 +8,7 @@ import MensWoolRunnerNzMidWaterproof from "@/assets/images/wool-runner-nz-mid-wa
 import MensStriderExplore from "@/assets/images/strider-explore-rustic-green.webp";
 import MensCruiserMidExplore from "@/assets/images/cruiser-mid-explore-rustic-green.webp";
 import MensCruiser from "@/assets/images/cruiser_blizzard_blizzard.webp";
-import { Categories } from "../components/Categories";
+
 
 export const products = [
   {
